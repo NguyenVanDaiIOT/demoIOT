@@ -1,0 +1,218 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="Web_co_ban.css">
+  </head>
+<body>
+  <div id="wrapper">
+  <div id="header">
+      <div class="box">
+    <a href="https://www.ctu.edu.vn"><img src="logo.jpg" alt="Logo" width="150" height="150"></a>
+      </div>
+      <p><b>GIỚI THIỆU THÀNH VIÊN NHÓM</b>
+      </p></a>
+
+  </div>
+  <div id="left">
+    <form>
+    <h1>VUI LÒNG CHỌN THÀNH VIÊN ĐỂ XEM THÔNG TIN</h1>
+    <select id="drop1" onclick="get_selection()">
+      <option>Nguyễn Văn Dài</option>
+      <option>Trần Đăng Khôi</option>
+      <option>Phạm Quốc Dương</option>
+      <option>Chú thiếm 7 nhà kế bên</option>
+    </select>
+    <p id="p1"></p>
+    <h1 id="c1"></h1>
+    <img id="img1" src="" width="250px" height="250px">
+    <table id="myTable">
+      <tr>
+        <td>Họ tên</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Ngành</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+  </div>
+  <div id="right">
+    <h1>GIẢI PHƯƠNG TRÌNH BẬC 2</h1>
+      <label>
+        <input type="input" id="inp1" onchange="update_value()" placeholder="a" value="">
+      </label><b>X^2+</b>
+
+      <label> 
+        <input type="input" id="inp2" onchange="update_value()" placeholder="b" value="">
+      </label>X+
+
+      <label> 
+        <input type="input" id="inp3" onchange="update_value()" placeholder="c" value="">
+      </label><br>
+
+      <label>
+        <input type="button" id="bt_kq" onchange="update_value()" value="KẾT QUẢ">
+      </label>
+
+      <!-- Kết quả phép toán -->
+      <p id="kq"></p>
+  </div>
+</div>
+  <script type="text/javascript">
+    function get_selection(){
+      document.getElementById("c1").innerHTML;
+      i1 = document.getElementById("p1");
+      l1 = document.getElementById("drop1").options;
+      idx = l1.selectedIndex;
+      if (idx == 0){
+        document.getElementById("img1").src="3.jpg"
+        i1.innerHTML = "Bạn vừa chọn trưởng nhóm: "+ l1[0].innerHTML;
+        var table = document.getElementById("myTable");
+        // hien thị bảng thông tin
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "Khoa";
+        cell2.innerHTML = "Tự động hóa";
+        
+        row = table.insertRow(0);            
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+
+        cell1.innerHTML = "Ngành";
+        cell2.innerHTML = "KTĐK & TĐH";
+        
+        row = table.insertRow(0);
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell1.innerHTML = "Họ tên";
+        cell2.innerHTML = "Nguyễn Văn Dài";
+
+      }else if (idx == 1){
+        document.getElementById("img1").src="4.jpg"
+        i1.innerHTML = "Bạn vừa chọn thành viên: "+ l1[1].innerHTML;
+        var table = document.getElementById("myTable");
+
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "Khoa";
+        cell2.innerHTML = "Tự Động Hóa";
+        
+        row = table.insertRow(0);            
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+
+        cell1.innerHTML = "Ngành";
+        cell2.innerHTML = "KTĐK & TĐH";
+        
+        row = table.insertRow(0);
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell1.innerHTML = "Họ tên";
+        cell2.innerHTML = "Trần Đăng Khôi";
+      }else if (idx == 2){
+        document.getElementById("img1").src="1.jpg"
+        i1.innerHTML = "Bạn vừa chọn thành viên: "+ l1[2].innerHTML;
+        var table = document.getElementById("myTable");
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "Khoa";
+        cell2.innerHTML = "Tự Động Hóa";
+        
+        row = table.insertRow(0);            
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+
+        cell1.innerHTML = "Ngành";
+        cell2.innerHTML = "KTĐK & TĐH";
+        
+        row = table.insertRow(0);
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell1.innerHTML = "Họ tên";
+        cell2.innerHTML = "Phạm Quốc Dương";
+      }else{
+        document.getElementById("img1").src="2.jpg"
+        i1.innerHTML = "Bạn vừa chọn thành viên: "+ l1[3].innerHTML;
+        var table = document.getElementById("myTable");
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        document.getElementById("myTable").deleteRow(0);
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "Khoa";
+        cell2.innerHTML = "Hàng xóm";
+        
+        row = table.insertRow(0);            
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+
+        cell1.innerHTML = "Ngành";
+        cell2.innerHTML = "Hóng hớt";
+        
+        row = table.insertRow(0);
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell1.innerHTML = "Họ tên";
+        cell2.innerHTML = "Chú Thiếm 7";
+      }
+    }
+    function update_value() {
+    var a, b, c, x1, x2, delta;
+
+    // lấy hệ số a
+    const tmp_inp1 = document.getElementById("inp1").value;
+    a = parseFloat(tmp_inp1);
+
+    // lấy hệ số b
+    const tmp_inp2 = document.getElementById("inp2").value;
+    b = parseFloat(tmp_inp2);
+
+    // Lấy hệ số c
+    const tmp_inp3 = document.getElementById("inp3").value;
+    c = parseFloat(tmp_inp3);
+
+    // Hiển thị kết quả
+    const kq = document.getElementById("kq");
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      alert("Vui lòng nhập đủ 3 hệ số a, b, c!");
+    }
+    else {
+      delta = b * b - 4 * a * c;
+
+      if (delta < 0)
+        kq.innerHTML = "Phương trình vô nghiệm";
+      else if (delta == 0) {
+        const x = -(b / (2 * a));
+        kq.innerHTML = "Phương trình có nghiệp kép: x = " + x;
+      }
+      else if (delta > 0) {
+        x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        kq.innerHTML = "Phương trình có 2 nghiệm: x1 = " + x1 + " và x2 = " + x2;
+      }
+    }
+  }
+  </script>
+</body>
+</html>
